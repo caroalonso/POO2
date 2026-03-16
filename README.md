@@ -3,6 +3,11 @@
 
 ### 📒 [Ejercicios De Cuadernillo:]()
 
+### 📖 Repaso
+- [lorem]()
+- [Piedra, papel o tijera]()
+- [Piedra, papel o tijera extendido]()
+
 ### 🔧 Refactoring
 - [lorem]()
 - [lorem]()
