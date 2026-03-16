@@ -5,8 +5,8 @@
 
 ### 📖 Repaso
 - [lorem]()
-- [Piedra, papel o tijera]()
-- [Piedra, papel o tijera extendido]()
+- [Piedra, papel o tijera](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Repaso/ejercicio%202a)
+- [Piedra, papel o tijera extendido](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Repaso/ejercicio%202b)
 
 ### 🔧 Refactoring
 - [lorem]()
