@@ -1,0 +1,60 @@
+@startuml
+
+class Jugador {
+  + <<create>> Jugador (jugada: Jugada) :Jugador
+  + getJugada() :Jugada
+}
+
+abstract Jugada <<abstract>> {
+  + pierdeContraPiedra (): boolean
+  + pierdeContraTijera (): boolean
+  + pierdeContraPapel (): boolean
+  + pierdeContraLagarto (): boolean
+  + pierdeContraSpock (): boolean
+  + <<abstract>>leGanaA (jugada: Jugada): boolean
+}
+
+class Piedra {
+  + <<create>> Piedra(): Piedra
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPapel(): boolean
+  + pierdeContraSpock(): boolean
+}
+
+class Papel {
+  + <<create>> Papel(): Papel
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraTijera(): boolean
+  + pierdeContraLagarto(): boolean
+}
+
+class Tijera {
+  + <<create>> Tijera(): Tijera
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPiedra(): boolean
+  + pierdeContraSpock(): boolean
+}
+
+class Lagarto {
+  + <<create>> Lagarto(): Tijera
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPiedra(): boolean
+  + pierdeContraTijera(): boolean
+}
+
+class Spock {
+  + <<create>> Spock(): Tijera
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPapel(): boolean
+  + pierdeContraLagarto(): boolean
+}
+
+
+Jugador --> "1  " Jugada : " jugada"
+class Piedra extends Jugada
+class Papel extends Jugada
+class Tijera extends Jugada
+class Lagarto extends Jugada
+class Spock extends Jugada
+
+@enduml

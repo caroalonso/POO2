@@ -1,0 +1,48 @@
+@startuml
+
+class Jugador {
+  + <<create>> Jugador(jugada:Jugada) : Jugador
+  + getJugada() : Jugada
+}
+
+interface Jugada <<interface>>{
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPiedra(): boolean
+  + pierdeContraTijera(): boolean
+  + pierdeContraPapel(): boolean
+}
+
+abstract class ComportamientoComun <<abstract>> {
+  + pierdeContraPiedra(): boolean
+  + pierdeContraTijera(): boolean
+  + pierdeContraPapel(): boolean
+
+}
+
+class Piedra {
+  + <<create>> Piedra(): Piedra
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPapel(): boolean
+}
+
+class Papel {
+  + <<create>> Papel(): Papel
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraTijera(): boolean
+}
+
+class Tijera {
+  + <<create>> Tijera(): Tijera
+  + leGanaA(jugada:Jugada): boolean
+  + pierdeContraPiedra(): boolean
+}
+
+
+Jugador --> "1  " Jugada : " jugada"
+class ComportamientoComun implements Jugada
+class Piedra extends ComportamientoComun
+class Papel extends ComportamientoComun
+class Tijera extends ComportamientoComun
+
+
+@enduml
