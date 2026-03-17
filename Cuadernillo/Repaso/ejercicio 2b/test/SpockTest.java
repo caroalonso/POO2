@@ -1,10 +1,10 @@
-package ejercicio2b;
+package RepasoEjercicio2b;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
-public class TestSpock {
+public class SpockTest {
 
     private Jugada piedra;
     private Jugada tijera;

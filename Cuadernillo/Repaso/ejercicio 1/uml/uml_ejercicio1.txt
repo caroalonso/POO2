@@ -1,0 +1,53 @@
+@startuml
+
+class Twitter {
+  + <<create>> Twitter() : Twitter
+  - buscarUsuario (userName: String): Usuario
+  + agregarUsuario (userName: String): void
+  + eliminarUsuario (userName: String): void
+}
+
+
+class Usuario {
+  -userName: String
+  
+  + <<create>> Usuario (userName: String): Usuario
+  + agregarPublicacion (publicacion: Publicacion): void
+  + getUserName (): String
+  + eliminarPublicaciones (): void
+}
+
+
+abstract class Publicacion <<abstract>> {
+  + <<abstract>> getTexto (): String
+  + <<abstract>> eliminarLasReferenciasDeRetweets (): void
+}
+
+
+class Tweet {
+  -texto: String
+  
+  + <<create>> Tweet (texto: String): Tweet
+  + agregarRetweet (Retweet reTweet): void
+  - longitudInvalida (texto: String): boolean
+  + getTexto (): String
+  + eliminarLasReferenciasDeRetweets (): void
+}
+
+
+class Retweet {
+  + <<create>> Retweet (tweet: Tweet): Retweet
+  + eliminar (): void
+  + getTexto (): String
+  + eliminarLasReferenciasDeRetweets (): void
+}
+
+
+Twitter --> " * " Usuario : " usuarios"
+Usuario --> " * " Publicacion : " publicaciones"
+Tweet --> " *   " Retweet : " retweets"
+
+class Tweet extends Publicacion
+class Retweet extends Publicacion
+
+@enduml
