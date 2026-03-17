@@ -50,6 +50,7 @@ class Retweet {
 Twitter --> " * " Usuario : " usuarios"
 Usuario --> " * " Publicacion : " publicaciones"
 Tweet --> " *   " Retweet : " retweets"
+Retweet --> " 1   " Tweet : " "
 
 class Tweet extends Publicacion
 class Retweet extends Publicacion
