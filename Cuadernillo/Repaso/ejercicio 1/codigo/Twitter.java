@@ -18,8 +18,12 @@ public class Twitter {
                 .orElse(null);
     }
 
+    public boolean existeUsuario(String userName) {
+        return (this.buscarUsuario(userName) != null);
+    }
+
     public void agregarUsuario(String userName) {
-        if (this.buscarUsuario(userName) != null)
+        if (this.existeUsuario(userName))
             throw new IllegalArgumentException("El usuario " + userName + " ya existe");
         this.usuarios.add(new Usuario(userName));
     }
@@ -31,6 +35,7 @@ public class Twitter {
         usuario.eliminarPublicaciones();
         this.usuarios.remove(usuario); //3
     }
+
 
 }
 

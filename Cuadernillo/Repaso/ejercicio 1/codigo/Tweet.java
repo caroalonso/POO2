@@ -36,4 +36,10 @@ public class Tweet extends Publicacion {
         this.retweetsDeMisTweets.clear(); // vacio coleccion de re-tweets
     }
 
+    // -------- < METODO UTIL PARA TEST > -----------
+
+    public int cantidadDeRetweets() {
+        return this.retweetsDeMisTweets.size();
+    }
+
 }

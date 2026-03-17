@@ -21,4 +21,10 @@ public class Retweet extends Publicacion {
     @Override
     public void eliminarLasReferenciasDeRetweets(){}
 
+    // -------- < METODO UTIL PARA TEST > -----------
+
+    public boolean tieneTweetOriginal() {
+        return this.tweet != null;
+    }
+
 }

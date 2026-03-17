@@ -28,4 +28,9 @@ public class Usuario {
         this.publicaciones.clear(); //2
     }
 
+    // -------- < METODO UTIL PARA TEST > -----------
+
+    public int cantidadPublicaciones() {
+        return this.publicaciones.size();
+    }
 }
