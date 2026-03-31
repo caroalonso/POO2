@@ -15,6 +15,8 @@ public class Retweet extends Publicacion {
 
     @Override
     public String getTexto(){
+        if(this.tweet == null)
+            throw new IllegalArgumentException("El Tweet es Inexistente");
         return this.tweet.getTexto();
     }
 
