@@ -17,6 +17,7 @@
 - [Extract Superclass 3.2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.2)
 - [Test CharRing y IntRing finales 3.3](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.3)
 - [UML final 3.4](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.4)
+- [Alcance De Redes Sociales 4](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%204)
 
 ### 🧩 Patrones de Diseño
 
