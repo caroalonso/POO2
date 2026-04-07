@@ -12,7 +12,7 @@
 - [Protocolo De Cliente 1.1](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%201/ejercicio1.1)
 - [Participacion De Proyectos 1.2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%201/ejercicio1.2)
 - [Calculos 1.3](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%201/ejercicio1.3)
-- [lorem]()
+- [Iteradores Circulares 2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%202)
 
 ### 🧩 Patrones de Diseño
 
