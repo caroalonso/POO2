@@ -13,6 +13,10 @@
 - [Participacion De Proyectos 1.2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%201/ejercicio1.2)
 - [Calculos 1.3](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%201/ejercicio1.3)
 - [Iteradores Circulares 2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%202)
+- [Test CharRing y IntRing 3.1](- [Iteradores Circulares 2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%202)
+- [Extract Superclass 3.2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.2)
+- [Test CharRing y IntRing finales 3.3](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.3)
+- [UML final 3.4](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.4)
 
 ### 🧩 Patrones de Diseño
 
