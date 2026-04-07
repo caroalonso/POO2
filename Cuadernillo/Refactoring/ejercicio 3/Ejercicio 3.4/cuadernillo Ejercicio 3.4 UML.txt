@@ -1,0 +1,27 @@
+abstract Ring <<abstract>> {
+  # idx:Integer
+  # {static} {readOnly} PRIMER_INDICE : int = 0
+  
+  + <<create>>Ring(): Ring
+  # getIdx():Integer
+  # indexNext(length:Integer):Integer
+}
+
+class CharRing {
+  -source:char []
+  
+  + <<create>> CharRing(srcString:String): CharRing
+  + next(): char
+  + getSource():char []
+}
+
+class IntRing {
+  - source: int []
+  
+  + <<create>> IntRing(): IntRing
+  + next(): Integer
+  + getSource():int []
+}
+
+ class CharRing extends Ring
+ class IntRing extends Ring
