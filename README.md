@@ -19,9 +19,10 @@
 - [UML final 3.4](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%203/Ejercicio%203.4)
 - [Alcance De Redes Sociales 4](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%204)
 - [Productos 5](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%205)
+- [Empleados 6.1](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%206/Ejercicio%206.1)
 ### 🧩 Patrones de Diseño
 
-- [lorem]()
+
 
 ### 🏗️ Framework
 
