@@ -1,0 +1,66 @@
+@startuml
+
+class Pedido {
+  -{static} DESCUENTO_CLIENTE_ANTIGUO:Real = 0.9
+
+  + <<create>>Pedido(cliente:Cliente , List<Producto> productos, formaPago:Pago):Pedido
+  + setFormaDePago(pago:Pago):void
+  + getFormaDePago():Pago
+  + getCostoTotal():Real
+  - calcularCostoSinDescuento():Real
+  + calcularTotalAPagar():Real
+}
+
+class Producto {
+  - precio:Real
+
+  + <<create>>Producto(precio:Real):Producto
+  + getPrecio():Real
+}
+
+class Cliente {
+  -{static} CINCO:Integer = 5
+  -fechaAlta:Date
+ 
+  + <<create>>Cliente(fechaAlta: Date):Cliente
+  + getFechaAlta():Date
+  + aniosDesdeFechaAlta():Integer;
+  + mayorAcinco():boolean
+}
+
+interface Pago <<Interface>>{
+
+  + <<abstract>>extraPago():Real
+}
+
+
+
+class Efectivo {
+ -{static} CERO:Real = 0 
+
+ + <<create>>Efectivo():Efectivo
+ + extraPago():Real
+}
+
+class SeisCuotas  {
+ -{static} SEIS_CUOTAS:Real = 0.2 
+
+  + <<create>>SeisCuotas():SeisCuotas
+  + extraPago():Real
+}
+
+class DoceCuotas  {
+ -{static} DOCE_CUOTAS:Real = 0.5 
+
+  + <<create>>DoceCuotas():DoceCuotas
+  + extraPago():Real
+}
+
+ Pedido --> Producto :  productos*
+ Pedido --> Pago :1 \n pago
+ Pedido --> Cliente :1 \n cliente
+ class Efectivo implements Pago
+ class SeisCuotas implements Pago
+ class DoceCuotas implements Pago
+
+@enduml
