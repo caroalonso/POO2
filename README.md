@@ -22,8 +22,9 @@
 - [Empleados 6.1](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%206/Ejercicio%206.1)
 ### 🧩 Patrones de Diseño
 - [Empleados 1.a](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%201/ejercicio%201a)
-- [Empleados 1.b]()
+- [Empleados 1.b](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%201/ejercicio%201b)
 - [Empleados 2]()
+- [Empleados 3]()
 
 
 
