@@ -6,7 +6,6 @@ import java.time.Period;
 public class Cliente {
     private static final int CINCO = 5;
     private LocalDate fechaAlta;
-    private Pago pago;
 
     public Cliente(LocalDate fechaAlta){
         this.fechaAlta=fechaAlta;

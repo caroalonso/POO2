@@ -6,7 +6,6 @@ public class Producto {
     public Producto(double precio){
         this.precio=precio;
     }
-
     public double getPrecio() {
         return this.precio;
     }
