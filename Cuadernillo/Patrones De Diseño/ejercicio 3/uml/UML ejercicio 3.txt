@@ -1,0 +1,39 @@
+@startuml
+class MediaPlayer<<CLIENT>> {
+ 
+  + <<create>>MediaPlayer(): MediaPlayer
+  + addMedia(media:Media): void
+  + play(): void
+}
+
+abstract Media<<TARGET>><<abstract>>{
+ + <<abstract>>play(): void
+}
+
+class Audio {
+  + <<create>>Audio(): Audio
+  + play(): void
+}
+
+class VideoFile  {
+  + <<create>>VideoFile(): VideoFile 
+  + play():void
+}
+
+class AdapterVideoStream<<ADAPTER>>  {
+  + <<create>>AdapterVideoStream(): AdapterVideoStream 
+  + play():void
+}
+
+class VideoStream <<ADAPTEE>>{
++ <<create>>VideoStream(): VideoStream
++ reproduce():void
+}
+
+MediaPlayer --> Media :  media *
+class Audio extends Media
+class VideoFile extends Media
+class AdapterVideoStream extends Media
+AdapterVideoStream --> "1 " VideoStream
+
+@enduml
