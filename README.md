@@ -21,6 +21,7 @@
 - [Productos 5](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%205)
 - [Empleados 6.1](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%206/Ejercicio%206.1)
 - [Juego 6.2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%206/Ejercicio%206.2)
+- [Publicaciones 6.3](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%206/Ejercicio%206.3)
 
 ### 🧩 Patrones de Diseño
 - [Friday the 13th en Java 1.a](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%201/ejercicio%201a)
