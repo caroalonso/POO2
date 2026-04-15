@@ -1,0 +1,61 @@
+@startuml
+class Biblioteca<<CLIENT>> {
+ 
+  + <<create>>Biblioteca(): Biblioteca
+  +  agregarSocio(socio:Socio): void
+  +  exportarSocios(): String
+  +  getExporter(): Exporter
+  +  setExporter(exporter:Exporter): void
+}
+
+
+interface Exporter<<TARGET>><<interface>>{
+ + <<abstract>>exportar(socios:Socios[*]): String
+}
+
+
+class Socio {
+  - nombre: String
+  - legajo: String
+  - email: String
+ 
+  + <<create>>Socio(nombre:String,email:String,legajo:String): Socio
+  + getNombre(): String
+  + setNombre(nombre:String): void
+  + setEmail(email:String): void
+  + getLegajo(): String
+  + setLegajo(legajo:String): void
+}
+
+class VoorheesExporter {
+  + exportar(socios:Socio): String
+  + exportar(socios:Socios[*]): String
+}
+
+
+class AdapterJson<<ADAPTER>>  {
+  + <<create>>AdapterJson(): AdapterJson 
+  - crearJSONSocio(socio:Socio): Object
+  + exportar(socios:Socios[*]): String
+}
+
+class AdapterJackson<<ADAPTER>>  {
+  + <<create>>AdapterJackson(): AdapterJackson 
+  + exportar(socios:Socios[*]): String
+}
+
+class ObjectMapper <<ADAPTEE>>{}
+class JSONArray <<ADAPTEE>>{}
+
+
+Biblioteca --> Socio :  socios *
+Biblioteca --> "1  " Exporter 
+ 
+class VoorheesExporter implements Exporter
+class AdapterJson implements Exporter
+class AdapterJackson implements Exporter
+
+AdapterJson --> "1  " JSONArray
+AdapterJackson --> "1 " ObjectMapper
+
+@enduml

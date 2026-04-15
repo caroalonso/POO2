@@ -1,0 +1,40 @@
+@startuml
+class Biblioteca {
+ 
+  + <<create>>Biblioteca(): Biblioteca
+  +  agregarSocio(socio:Socio): void
+  +  exportarSocios(): String
+  +  getExporter(): Exporter
+  +  setExporter(exporter:Exporter): void
+}
+
+
+interface Exporter<<interface>>{
+ + <<abstract>>exportar(socios:Socios[*]): String
+}
+
+
+class Socio {
+  - nombre: String
+  - legajo: String
+  - email: String
+ 
+  + <<create>>Socio(nombre:String,email:String,legajo:String): Socio
+  + getNombre(): String
+  + setNombre(nombre:String): void
+  + setEmail(email:String): void
+  + getLegajo(): String
+  + setLegajo(legajo:String): void
+}
+
+class VoorheesExporter {
+  + exportar(socios:Socio): String
+  + exportar(socios:Socios[*]): String
+}
+
+ Biblioteca --> Socio :  socios *
+ Biblioteca --> "1  " Exporter : exporter  
+class VoorheesExporter implements Exporter
+
+
+@enduml

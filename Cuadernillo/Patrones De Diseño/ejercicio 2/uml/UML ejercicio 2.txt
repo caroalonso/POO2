@@ -1,0 +1,50 @@
+@startuml
+abstract Empleado <<abstract>>{
+  - {static} PORCENTAJE_BASICO : Real = 0.13
+  - {static} PORCENTAJE_ADICIONAL : Real = 0.5
+  - {static} CASADO_ADICIONAL : Real = 5000
+  - {static} PORCENTAJE_ADICIONAL : Real = 0.5
+  # {static} DOS_MIL : Real = 2000
+  # cantidadDeHijos:Integer
+  # casado:boolean
+
+  + <<create>>Empleado(casado:boolean,cantidadhHijos:integer):Empleado
+  # adicionalPorFamilia():Real
+  - descuento():Real
+  + sueldo():Real
+  + <<abstract>>basico():Real
+  + <<abstract>>adicional():Real
+}
+
+class EmpleadoTemporario {
+ - {static} PARTE_DEL_BASICO : Real = 20000
+ - {static} VALOR_POR_HORA : Real = 300
+ - cantidadHorasLaborales:Integer
+
+ + <<create>>EmpleadoTemporario(casado:boolean,cantidadHijos:Integer,cantidadHorasLaborales:Integer):EmpleadoTemporario
+ + basico():Real
+ + adicional():Real
+}
+
+class EmpleadoPasante {
+ - {static} TOTAL_DEL_BASICO : Real = 20000
+ - cantidadExamenes:Integer
+
+ + <<create>>EmpleadoPasante(casado:boolean,cantidadHijos:Integer,cantidadExamenes:Integer):EmpleadoPasante
+ + basico():Real
+ + adicional():Real
+}
+
+class EmpleadoPlanta {
+ - {static} TOTAL_DEL_BASICO : Real = 50000
+ - anioAntiguedad:Integer
+
+ + <<create>>EmpleadoPlanta(casado:boolean,cantidadHijos:Integer,anioAntiguedad:Integer):EmpleadoPlanta
+ + basico():Real
+ + adicional():Real
+}
+
+class EmpleadoTemporario extends Empleado
+class EmpleadoPasante extends Empleado
+class EmpleadoPlanta extends Empleado
+@enduml
