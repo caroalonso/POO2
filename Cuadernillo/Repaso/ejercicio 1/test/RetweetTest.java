@@ -9,24 +9,18 @@ class RetweetTest {
     private Retweet retweet;
 
     @Test
-    public void constructorGuardaTweetOriginal() {
+    public void testConstructorGuardaTweetOriginal() {
         Tweet tweet = new Tweet("Hola");
         Retweet retweet = new Retweet(tweet);
         assertTrue(retweet.tieneTweetOriginal());
     }
 
     @Test
-    public void quitaReferenciaAlTweet() {
+    public void testQuitaReferenciaAlTweet() {
         Tweet tweet = new Tweet("Hola");
         Retweet retweet = new Retweet(tweet);
         assertTrue(retweet.tieneTweetOriginal());
         retweet.eliminar();
         assertFalse(retweet.tieneTweetOriginal());
     }
-
-
-
-
-
-
 }

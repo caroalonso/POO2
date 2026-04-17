@@ -8,28 +8,28 @@ public class IntRingTest {
     private IntRing intRing;
 
     @Test
-    void vectorVacio() {
+    void testVectorVacio() {
         IntRing intRing = new IntRing(new int[]{});
         assertArrayEquals(new int[]{}, intRing.getSource());
         assertEquals(0, intRing.getIdx());
     }
 
     @Test
-    void vectorConUnNumero() {
+    void testVectorConUnNumero() {
         IntRing intRing = new IntRing(new int[]{1});
         assertArrayEquals(new int[]{1}, intRing.getSource());
         assertEquals(0, intRing.getIdx());
     }
 
     @Test
-    void vectorConMasDeUnNumero() {
+    void testVectorConMasDeUnNumero() {
         IntRing intRing = new IntRing(new int[]{1,2,3});
         assertArrayEquals(new int[]{1,2,3}, intRing.getSource());
         assertEquals(0, intRing.getIdx());
     }
 
     @Test
-    void cicloBasico(){
+    void testCicloBasico(){
         IntRing intRing = new IntRing(new int[]{1,2,3});
 
         assertEquals(1, intRing.next());
@@ -39,7 +39,7 @@ public class IntRingTest {
     }
 
     @Test
-    void cicloMultiple(){
+    void testCicloMultiple(){
         IntRing intRing = new IntRing(new int[]{1,2,3});
 
         assertEquals(1, intRing.next());

@@ -17,14 +17,14 @@ class TwitterTest {
 
 
     @Test
-    public void agregarUsuarioValido() {
+    public void testAgregarUsuarioValido() {
         twitter.agregarUsuario(userName);
         assertTrue(twitter.existeUsuario(userName));
      }
 
 
      @Test
-    public void agregarUsuarioInvalido(){
+    public void testAgregarUsuarioInvalido(){
          twitter.agregarUsuario(userName); // 1° vez
          IllegalArgumentException exception= assertThrows(IllegalArgumentException.class, () -> twitter.agregarUsuario(userName)); // 2° vez
          assertEquals("El usuario " + userName + " ya existe", exception.getMessage());
@@ -32,13 +32,13 @@ class TwitterTest {
 
 
     @Test
-    public void noExisteUsuario() {
+    public void testNoExisteUsuario() {
         assertFalse(twitter.existeUsuario(userName));
     }
 
 
     @Test
-    public void existeUsuario() {
+    public void testExisteUsuario() {
         twitter.agregarUsuario(userName);
         twitter.existeUsuario(userName);
         assertTrue(twitter.existeUsuario(userName));
@@ -46,7 +46,7 @@ class TwitterTest {
 
 
     @Test
-    public void eliminacionDeUsuarioValido(){
+    public void testEliminacionDeUsuarioValido(){
         twitter.agregarUsuario(userName);
         assertTrue(twitter.existeUsuario(userName));
         twitter.eliminarUsuario(userName);
@@ -55,7 +55,7 @@ class TwitterTest {
 
 
     @Test
-    public void eliminacionDeUsuarioInvalido(){
+    public void testEliminacionDeUsuarioInvalido(){
         IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> twitter.eliminarUsuario(userName));
         assertEquals("El usuario " + userName + " no existe", exception.getMessage());
     }

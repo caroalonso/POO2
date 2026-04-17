@@ -8,28 +8,28 @@ public class CharRingTest {
     private CharRing charRing;
 
     @Test
-    void vectorVacio() {
+    void testVectorVacio() {
         CharRing charRing = new CharRing("");
         assertArrayEquals(new char[]{}, charRing.getSource());
         assertEquals(0, charRing.getIdx());
     }
 
     @Test
-    void vectorConUnCaracter() {
+    void testVectorConUnCaracter() {
         CharRing charRing = new CharRing("x");
         assertArrayEquals(new char[]{'x'}, charRing.getSource());
         assertEquals(0, charRing.getIdx());
     }
 
     @Test
-    void vectorConMasDeUnCaracter() {
+    void testVectorConMasDeUnCaracter() {
         CharRing charRing = new CharRing("caro");
         assertArrayEquals(new char[]{'c','a','r','o'}, charRing.getSource());
         assertEquals(0, charRing.getIdx());
     }
 
     @Test
-    void cicloBasico(){
+    void testCicloBasico(){
         CharRing charRing = new CharRing("caro");
 
         assertEquals('c', charRing.next());

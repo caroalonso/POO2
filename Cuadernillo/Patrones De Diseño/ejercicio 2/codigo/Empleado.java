@@ -4,7 +4,7 @@ public abstract class Empleado {
     private static final double PORCENTAJE_ADICIONAL=0.5;
     public static final double CASADO_ADICIONAL=5000;
     public static final double SOLTERO_ADICIONAL=0;
-    protected static final double DOS_MIL=2.000;
+    protected static final double DOS_MIL=2000;
     protected boolean casado;
     protected int cantidadhHijos;
 

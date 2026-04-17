@@ -1,7 +1,7 @@
 package PatronesEjercicio2;
 
 public class EmpleadoTemporario extends Empleado{
-    private static final double PARTE_DEL_BASICO=20.000;
+    private static final double PARTE_DEL_BASICO=20000;
     private static final double VALOR_POR_HORA=300;
     private int cantidadHorasLaborales;
 
@@ -17,6 +17,6 @@ public class EmpleadoTemporario extends Empleado{
 
     @Override
     double adicional() {
-        return this.adicionalPorFamilia() + (this.cantidadhHijos * DOS_MIL);
+        return this.adicionalPorFamilia();
     }
 }

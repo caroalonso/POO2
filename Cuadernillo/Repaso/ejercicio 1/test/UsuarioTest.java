@@ -18,7 +18,7 @@ class UsuarioTest {
     }
 
     @Test
-    public void agregarPublicacion(){
+    public void testAgregarPublicacion(){
         assertEquals(0,usuario.cantidadPublicaciones());
         usuario.agregarPublicacion(tweet);
         assertEquals(1,usuario.cantidadPublicaciones());
@@ -26,7 +26,7 @@ class UsuarioTest {
 
 
     @Test
-    public void agregarDiferentesPublicaciones(){
+    public void testAgregarDiferentesPublicaciones(){
         usuario.agregarPublicacion(tweet);
         usuario.agregarPublicacion(retweet);
         assertEquals(2, usuario.cantidadPublicaciones());
@@ -34,7 +34,7 @@ class UsuarioTest {
 
 
     @Test
-    public void eliminarPublicaciones(){
+    public void testEliminarPublicaciones(){
         usuario.agregarPublicacion(tweet);
         usuario.agregarPublicacion(retweet);
         assertEquals(2,usuario.cantidadPublicaciones());
@@ -44,7 +44,7 @@ class UsuarioTest {
 
 
     @Test
-    public void eliminarPublicacionesSinPublicaciones(){
+    public void testEliminarPublicacionesSinPublicaciones(){
         assertEquals(0, usuario.cantidadPublicaciones());
         usuario.eliminarPublicaciones();
         assertEquals(0, usuario.cantidadPublicaciones());

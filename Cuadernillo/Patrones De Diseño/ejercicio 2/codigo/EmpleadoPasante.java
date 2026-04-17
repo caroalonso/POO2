@@ -1,7 +1,7 @@
 package PatronesEjercicio2;
 
 public class EmpleadoPasante extends Empleado{
-    public static final double TOTAL_DEL_BASICO=20.000;
+    public static final double TOTAL_DEL_BASICO=20000;
     private int cantidadExamenes;
 
     public EmpleadoPasante(boolean casado,int cantidadHijos,int cantidadExamenes){
@@ -16,6 +16,6 @@ public class EmpleadoPasante extends Empleado{
 
     @Override
     double adicional() {
-        return DOS_MIL;
+        return DOS_MIL * this.cantidadExamenes;
     }
 }
