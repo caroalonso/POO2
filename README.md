@@ -34,7 +34,10 @@
 - [Usando la librería JSON.simple 1.b](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%201/ejercicio%201b)
 - [Cálculo de sueldos 2](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%202)
 - [Media Player 3](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%203)
-
+- [Topografías 4.a](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%204/ejercicio%204a)
+- [Más Topografías 4.b](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%204/ejercicio4b)
+- [Sustancias químicas 5](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%205)
+- [SubteWay 6](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%206)
 
 
 ### 🏗️ Framework
