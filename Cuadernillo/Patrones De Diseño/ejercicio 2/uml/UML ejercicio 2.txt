@@ -4,7 +4,7 @@ abstract Empleado <<abstract>>{
   - {static} PORCENTAJE_ADICIONAL : Real = 0.5
   - {static} CASADO_ADICIONAL : Real = 5000
   - {static} PORCENTAJE_ADICIONAL : Real = 0.5
-  # {static} DOS_MIL : Real = 2000
+  - {static} ADICIONAL_POR_HIJO : Real = 2000
   # cantidadDeHijos:Integer
   # casado:boolean
 
@@ -28,6 +28,8 @@ class EmpleadoTemporario {
 
 class EmpleadoPasante {
  - {static} TOTAL_DEL_BASICO : Real = 20000
+ - {static} ADICIONAL_POR_EXAMEN : Real = 2000
+
  - cantidadExamenes:Integer
 
  + <<create>>EmpleadoPasante(casado:boolean,cantidadHijos:Integer,cantidadExamenes:Integer):EmpleadoPasante
@@ -37,6 +39,7 @@ class EmpleadoPasante {
 
 class EmpleadoPlanta {
  - {static} TOTAL_DEL_BASICO : Real = 50000
+- {static} ADICIONAL_POR_ANTIGUEDAD : Real = 2000
  - anioAntiguedad:Integer
 
  + <<create>>EmpleadoPlanta(casado:boolean,cantidadHijos:Integer,anioAntiguedad:Integer):EmpleadoPlanta

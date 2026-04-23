@@ -1,0 +1,55 @@
+@startuml
+
+
+interface CreadorSandwich<<CREATOR>><<interface>>{
+
+  # <<abstract>> crear(): Sandwich
+}
+
+class Sandwich<<PRODUCT>>{
+
+ + <<create>>Sandwich(): Sandwich
+ + agregarIngrediente(ingrediente:Ingrediente): void
+ + precioTotalDeSandwich(): Real
+}
+
+
+class CreadorClasico<<CONCRETE CREATOR>>{
+
+ + crear(): Sandwich
+}
+
+class CreadorSinTACC<<CONCRETE CREATOR>>{
+
+ + crear(): Sandwich
+}
+
+class CreadorVegano<<CONCRETE CREATOR>>{
+
+ + crear(): Sandwich
+}
+
+class CreadorVegetariano<<CONCRETE CREATOR>>{
+
+ + crear(): Sandwich
+}
+
+
+class Ingrediente {
+ -nombre:String
+ -precio:Real
+ 
+ + <<create>> Ingrediente(): Ingrediente
+ + precioDeIngrediente() : Real
+}
+
+
+Sandwich --> Ingrediente : ingredientes*
+
+
+class CreadorClasico implements CreadorSandwich
+class CreadorVegetariano implements CreadorSandwich
+class CreadorVegano implements CreadorSandwich
+class CreadorSinTACC implements CreadorSandwich
+
+@enduml

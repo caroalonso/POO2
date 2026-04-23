@@ -1,0 +1,79 @@
+@startuml
+
+class Director<<DIRECTOR>> {
+ 
+ + <<create>> Director(): Director
+ + construir (builder:SandwichBuilder) : Sandwich 
+}
+
+abstract SandwichBuilder<<BUILDER>><<abstract>>{
+
+  + reset(): void
+  + getResultado(): Sandwich
+  + <<abstract>> agregarPan(): void
+  + <<abstract>> agregarAderezo(): void
+  + <<abstract>> agregarPrincipal(): void
+  + <<abstract>> agregarAdicional(): void
+}
+
+class Sandwich<<PRODUCT>>{
+
+ + <<create>>Sandwich(): Sandwich
+ + agregarIngrediente(ingrediente:Ingrediente): void
+ + precioTotalDeSandwich(): Real
+}
+
+
+class Clasico<<CONCRETE BUILDER>>{
+
+ + <<create>>Clasico(): Clasico
+ + agregarPan(): void
+ + agregarAderezo(): void
+ + agregarPrincipal(): void
+ + agregarAdicional(): void
+}
+
+class Vegano<<CONCRETE BUILDER>>{
+
+ + <<create>>Vegano(): Vegano
+ + agregarPan(): void
+ + agregarAderezo(): void
+ + agregarPrincipal(): void
+ + agregarAdicional(): void
+}
+
+class Vegetariano<<CONCRETE BUILDER>>{
+
+ + <<create>>Vegetariano(): Vegetariano
+ + agregarPan(): void
+ + agregarAderezo(): void
+ + agregarPrincipal(): void
+ + agregarAdicional(): void
+}
+
+class SinTACC<<CONCRETE BUILDER>>{
+
+ + <<create>>SinTACC(): SinTACC
+ + agregarPan(): void
+ + agregarAderezo(): void
+ + agregarPrincipal(): void
+ + agregarAdicional(): void
+}
+
+class Ingrediente {
+ -nombre:String
+ -precio:Real
+ 
+ + <<create>> Ingrediente(): Ingrediente
+ + precioDeIngrediente() : Real
+}
+
+
+Sandwich --> Ingrediente : ingredientes*
+class Clasico extends SandwichBuilder
+class Vegano extends SandwichBuilder
+class SinTACC extends SandwichBuilder
+class Vegetariano extends SandwichBuilder
+SandwichBuilder --> "1 " Sandwich
+
+@enduml

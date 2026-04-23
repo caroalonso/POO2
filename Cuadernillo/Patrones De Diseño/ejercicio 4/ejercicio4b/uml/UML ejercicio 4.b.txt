@@ -1,0 +1,64 @@
+@startuml
+
+abstract Topografia <<COMPONENT>><<abstract>>{
+  + <<abstract>> calcularProporcion (): Real
+  + <<abstract>> esIgual (topografia:Topografia): boolean
+  + <<abstract>> esIgualAgua (agua:Agua): boolean
+  + <<abstract>> esIgualTierra (tierra:Tierra): boolean
+  + <<abstract>> esIgualMixta (mixta:Mixta): boolean
+  + equals(obj:Object ): boolean
+}
+
+class Agua<<LEAF>>{
+ - proporcion: double = 1
+
+ + <<create>>Agua (): Agua
+ + calcularProporcion (): Real
+ + esIgual (topografia:Topografia): boolean
+ + esIgualAgua (agua:Agua): boolean
+ + esIgualTierra (tierra:Tierra): boolean
+ + esIgualMixta (mixta:Mixta): boolean
+}
+
+class Tierra<<LEAF>>{
+ - proporcion: double = 0
+
+ + <<create>>Tierra (): Tierra
+ + calcularProporcion (): Real
+ + esIgual (topografia:Topografia): boolean
+ + esIgualAgua (agua:Agua): boolean
+ + esIgualTierra (tierra:Tierra): boolean
+ + esIgualMixta (mixta:Mixta): boolean
+}
+
+class Pantano<<LEAF>>{
+ - proporcion: double = 0.7
+
+ + <<create>>Pantano (): Pantano
+ + calcularProporcion (): Real
+ + esIgual (topografia:Topografia): boolean
+ + esIgualAgua (agua:Agua): boolean
+ + esIgualTierra (tierra:Tierra): boolean
+ + esIgualMixta (mixta:Mixta): boolean
+}
+
+
+class Mixta<<COMPOSITE>>{
+ 
+
+ + <<create>>Mixta (t1:Topografia,t2:Topografia,t3:Topografia,t4:Topografia): Mixta
+ + calcularProporcion (): Real
+ + esIgual (topografia:Topografia): boolean
+ + esIgualAgua (agua:Agua): boolean
+ + esIgualTierra (tierra:Tierra): boolean
+ + esIgualMixta (mixta:Mixta): boolean
+}
+
+
+ class Agua extends Topografia
+ class Tierra extends Topografia
+ class Pantano extends Topografia
+ class Mixta extends Topografia
+ Mixta *--> Topografia : children *
+
+@enduml

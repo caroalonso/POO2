@@ -1,4 +1,4 @@
-package PatronesEjercicio2;
+package PatronesEjercicio2Template;
 
 public class EmpleadoTemporario extends Empleado{
     private static final double PARTE_DEL_BASICO=20000;

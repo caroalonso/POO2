@@ -1,0 +1,63 @@
+@startuml
+
+interface SustanciaQuimica <<COMPONENT>><<inteface>>{
+  + <<abstract>> formula (): String
+  + <<abstract>> pesoMolecular (): Integer
+  + <<abstract>> carga (agua:Agua): Integer
+  + <<abstract>> esValida (sustancia:SustanciaQuimica): boolean
+  + <<abstract>> compatibleConAtomo (otro:Atomo): boolean
+  + <<abstract>> add (sustancia:SustanciaQuimica) : Union
+}
+
+class Atomo<<LEAF>>{
+ - nombre: String
+ - simbolo: String
+ - pesoAtomico: Integer
+ - carga: Integer
+ - metal: boolean
+
+ + <<create>> Atomo(nombre:String, simbolo:String, pesoAtomico:integer, carga:integer, metal:boolean): Atomo
+ + formula (): String
+ + pesoMolecular (): Integer
+ + carga (agua:Agua): Integer
+ + esValida (sustancia:SustanciaQuimica): boolean
+ + compatibleConAtomo (otro:Atomo): boolean
+ + add(SustanciaQuimica):Union
+}
+
+
+class Union<<COMPOSITE>>{
+ 
+ + <<create>> Union (): Union
+ + agregarSustancia(sustancia:SustanciaQuimica): void
+ + formula (): String
+ + pesoMolecular (): Integer
+ + carga (agua:Agua): Integer
+ + esValida (sustancia:SustanciaQuimica): boolean
+ + compatibleConAtomo (otro:Atomo): boolean
+ + add(SustanciaQuimica):Union
+}
+
+class TablaPeriodica{
+
++ <<create>> TablaPeriodica(): TablaPeriodica
++ hidrogeno(): SustanciaQuimica
++ oxigeno(): SustanciaQuimica
++ cloro(): SustanciaQuimica
++ sodio(): SustanciaQuimica
++ calsio(): SustanciaQuimica
+}
+
+class Cliente{
+
++ <<create>>Cliente(): Cliente
++ agua(): Union
+}
+
+
+class Atomo implements SustanciaQuimica
+class Union implements SustanciaQuimica
+Union *--> SustanciaQuimica : children *
+Cliente --> "1 " TablaPeriodica
+
+@enduml
