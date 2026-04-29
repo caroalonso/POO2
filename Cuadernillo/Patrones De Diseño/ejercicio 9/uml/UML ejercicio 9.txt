@@ -1,0 +1,66 @@
+@startuml
+class Decodificador <<CONTEXT>> {
+ 
+ + <<create>>Decodificador(configuracionSugerencia:Configuracion): Decodificador
+ + agregarPeliculaAGrilla(pelicula:Pelicula) : void
+ + agregarPeliculasReproducidad(pelicula:Pelicula): void
+ + getPeliculasReproducidas(): Pelicula[*]
+ + setConfiguracionSugerencia(configuracionSugerencia:Configuracion): void
+ + peliculasSugeridas(): Pelicula[*]
+ + peliculasSinReproducirDeLaGrilla(): Pelicula[*]
+}
+
+abstract Configuracion<<STRATEGY>><<abstract>>{
+  # {static} CANTIDAD_DE_PELICULAS: Integer = 3
+
+  + masRecientes(peliculas:Pelicula[*] ): Pelicula[*]
+  + <<abstract>>sugerenciasDePeliculas(decodificador:Decodificador): Pelicula[*]
+}
+
+class Novedad<<CONCRETE STRATEGY A>>{
+
+ + <<create>>Novedad(): Novedad
+ + sugerenciasDePeliculas(decodificador:Decodificador):Pelicula[*]
+}
+
+
+class Similaridad<<CONCRETE STRATEGY B>>{
+
+ + <<create>>Similaridad(): Similaridad
+ + sugerenciasDePeliculas(decodificador:Decodificador):Pelicula[*]
+}
+
+
+class Puntaje<<CONCRETE STRATEGY C>>{
+
+ + <<create>>Puntaje(): Puntaje
+ + sugerenciasDePeliculas(decodificador:Decodificador):Pelicula[*]
+}
+
+class Pelicula{
+ -titulo:String
+ -anioEstreno:integer
+ -puntaje:Real
+
+ + <<create>>Pelicula(titulo:String,anioEstreno:Integer,puntaje:Real): Pelicula
+ + agregarPeliculaSimilar(pelicula:Pelicula): void
+ + agregarSimilar2(pelicula:Pelicula ): void
+ + getPeliculasSimilares(): Pelicula[*]
+ + getAnioEstreno(): Integer
+ + getPuntaje(): Real
+ + toString(): String
+}
+
+
+class Novedad extends Configuracion
+class Similaridad extends Configuracion
+class Puntaje extends Configuracion
+
+Pelicula --> Pelicula : peliculasSimilares *
+
+Decodificador --> Pelicula : grillaDePeliculas *
+Decodificador --> Pelicula : peliculasReproducidas *
+
+Decodificador --> "1  " Configuracion
+
+@enduml

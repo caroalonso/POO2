@@ -1,0 +1,67 @@
+@startuml
+class ToDoItem <<CONTEXT>> {
+ -name: String
+ -comentarios: String[*]
+ -inicio: DateTime
+ -fin: DateTime
+ 
+ + <<create>>ToDoItem(name:String): ToDoItem
+ + agregarComentario(comentario:String): void
+ + setState(estado:State): void
+ + setFechaInicio(): void
+ + setFechaFin (): void
+ + getInicio(): DateTime
+ + getFin(): DateTime
+ + start() :void
+ + togglePause(): void
+ + finish(): void
+ + workedTime(): Duration
+ + addComment(comment:String): void
+}
+
+abstract State<<STATE>><<abstract>>{
+
+  + star(item:ToDoItem): void
+  + togglePause(item:ToDoItem): void 
+  + finish(item:ToDoItem): void
+  + workedTime(item:ToDoItem): Duration
+  + addComment(item:ToDoItem ,comment:String): void
+}
+
+class Pending<<CONCRETE STATE A>>{
+
+ + <<create>>Pending(): Pending
+ + star(item:ToDoItem): void
+ + workedTime(item:ToDoItem ): Duration
+}
+
+
+class InProgress<<CONCRETE STATE B>>{
+
+ + <<create>>InProgress(): InProgress
+ + togglePause(item:ToDoItem): void
+ + finish(item:ToDoItem): void
+}
+
+class Paused<<CONCRETE STATE C>>{
+
+ + <<create>>Paused(): Paused
+ + togglePause(item:ToDoItem): void
+ + finish(item:ToDoItem): void
+}
+
+class Finish<<CONCRETE STATE D>>{
+
+ + <<create>>Finish(): Finish
+ + addComment(item:ToDoItem,comment:String): void
+ + workedTime(item:ToDoItem): Duration
+}
+
+
+class Pending extends State
+class InProgress extends State
+class Paused extends State
+class Finish extends State
+ToDoItem o-- "1" State
+
+@enduml
