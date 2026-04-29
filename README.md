@@ -38,6 +38,9 @@
 - [Más Topografías 4.b](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%204/ejercicio4b)
 - [Sustancias químicas 5](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%205)
 - [SubteWay 6](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%206)
+- [X 7]()
+- [ToDoItem 8](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%208)
+- [Decodificador de películas 9](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%209)
 
 
 ### 🏗️ Framework
