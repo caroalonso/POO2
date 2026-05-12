@@ -1,0 +1,83 @@
+@startuml
+
+@startuml
+class Usuario {
+ - nombre:String
+
+ + <<create>>Usuario(nombre:String): Usuario
+ + agregarReserva(reserva:Reserva ): void
+}
+
+
+class AutoEnAlquiler{
+ - precioPorDia: Real
+ - cantidadPlazas: Integer
+ - marca: String
+ 
+ + <<create>> AutoEnAlquiler(precioPorDia: real,cantidadPlazas:integer,marca:String,politicaCancelacion:PoliticaCancelacion): AutoEnAlquiler
+ + setPoliticaCancelacion(politicaCancelacion:PoliticaCancelacion): void
+ + getPrecioPorDia(): Real
+ + cancelacionSegunPolitica(fecha:Date,reserva:Reserva): Real
+}
+
+
+class Reserva <<CONTEXT>>{
+ - cantidadDias:Integer
+ - fechaInicioDeReserva:Date
+ 
+ + <<create>> Reserva(usuario:Usuario , autoEnAlquiler:AutoEnAlquiler, cantidadDias:Integer, fecha:Date): Reserva
+ + fechaDeCancelacionAnteriorAFechaDeInicioDeReserva(fechaCancelacion:Date): boolean
+ + fechaDeCancelacionUnaSemanaAntesDeInicioDeReserva(fechaCancelacion:Date) :boolean
+ + fechaDesde6Hasta2DiasAntesDeInicioDeReserva(fechaCancelacion:Date): boolean
+ + montoApagar(): Real
+ + montoAreembolsar(fechaDeCancelacion:Date): Real
+}
+
+
+interface PoliticaDeCancelacion <<STRATEGY>> <<interface>>{
+
+ + cacelacion(fechaDeCancelacion:Date,reserva:Reserva): Real
+}
+
+
+class Flexible <<CONCRETE STRATEGY A>> {
+ - {static} CERO: Real = 0
+
+ + <<create>> Flexible(): Flexible
+ + cancelacion(fechaDeCancelacion:Date,reserva:Reserva): Real
+}
+
+
+class Moderada <<CONCRETE STRATEGY B>>{
+ - {static} CINCUENTA_POR_CIENTO : Real = 0.5 
+ - {static} SIETE: integer = 7
+- {static} DOS: integer = 2 
+ - {static} CERO: Real = 0
+
+ + <<create>> Moderada(): Moderada
+ + cancelacion(fechaDeCancelacion:Date,reserva:Reserva): Real
+}
+
+
+class Estricta <<CONCRETE STRATEGY C>>{
+ - {static} CERO: Real = 0
+
+ + <<create>> Estricta(): Estricta
+ + cancelacion(fechaDeCancelacion:Date,reserva:Reserva): Real
+}
+
+
+class Estricta implements PoliticaDeCancelacion
+class Flexible implements PoliticaDeCancelacion
+class Moderada implements PoliticaDeCancelacion 
+
+Reserva --> "1  " Usuario
+Reserva --> "1  " AutoEnAlquiler
+
+Usuario --> AutoEnAlquiler: autoEnAlquiler *
+
+AutoEnAlquiler --> "1  " PoliticaDeCancelacion
+
+
+@enduml
+@enduml

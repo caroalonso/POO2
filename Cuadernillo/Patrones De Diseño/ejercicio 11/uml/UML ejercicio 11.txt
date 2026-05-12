@@ -1,0 +1,49 @@
+@startuml
+abstract FileSystem <<COMPONENT>><<abstract>>{
+  -nombre:String
+  -fechaCreacion:Date
+  
+  + <<create>> fileSystem (String nombre, fechaCreacion:Date): FileSystem
+  + getNombre (): String
+  + getFechaCreacion(): Date
+  + mismoNombre(nombre:String): boolean
+  + <<abstract>> tamanoTotalOcupado(): Real
+  + <<abstract>> archivoMasGrande(): Archivo
+  + <<abstract>> archivoMasNuevo(): Archivo
+  + <<abstract>> buscar(nombre:String): FileSystem
+  + <<abstract>> buscarTodos(nombre:String): FileSystem[*]
+  + listadoDeContenido(padhPadre:String): String
+}
+
+class Archivo<<LEAF>>{
+ - tamanio:Real
+
+ + <<create>> Archivo(nombre:String, fechaCreacion:Date, tamanio:Real): Archivo
+ + tamanoTotalOcupado(): Real
+ + archivoMasGrande(): Archivo
+ + archivoMasNuevo(): Archivo
+ + buscar(nombre:String): FileSystem
+ + buscarTodos(nombre:String): FileSystem[*]
+ + listadoDeContenido(padhPadre:String): String
+}
+
+
+class Directorio<<COMPOSITE>>{
+ - {static} TAMANIO : Real = 32
+
+ + <<create>> Directorio(nombre:String, fechaCreacion:Date): Directorio
+ + agregarFileSystem(fileSystem:FileSystem): void
+ + tamanoTotalOcupado(): Real
+ + archivoMasGrande(): Archivo
+ + archivoMasNuevo(): Archivo
+ + buscar(nombre:String): FileSystem
+ + buscarTodos(nombre:String): FileSystem[*]
+ + listadoDeContenido(padhPadre:String): String
+ + cantidadDeElementos():Integer
+}
+
+
+class Archivo implements FileSystem
+class Directorio implements FileSystem
+Directorio *--> FileSystem : children *
+@enduml
