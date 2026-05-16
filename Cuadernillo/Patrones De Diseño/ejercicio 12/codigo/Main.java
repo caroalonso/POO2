@@ -10,7 +10,7 @@ public class Main {
 
         Usuario usuario= new Usuario("Juan");
         Reserva reserva =new Reserva(usuario,autoEnAlquiler,4, LocalDate.now().plusDays(2));
-        usuario.agregarReserva(reserva);
+        usuario.agregarAuto(autoEnAlquiler);
 
         System.out.println( "Monto de reembolso para politica Flexible : $ " + reserva.montoAreembolsar(LocalDate.now()));
 
