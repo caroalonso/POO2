@@ -44,6 +44,8 @@
 - [X 10]()
 - [FileSystem 11](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%2011)
 - [Alquiler De Automoviles 12](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%2012)
+-  [X 13.a]()
+-  [X 13.b]()
 - [Armado de PCs 14](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%2014)
 - [Mensajero 15](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%2015)
 - [Excursiones 16](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%2016)
