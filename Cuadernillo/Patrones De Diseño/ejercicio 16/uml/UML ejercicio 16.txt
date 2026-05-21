@@ -1,0 +1,73 @@
+@startuml
+
+class Excursion <<CONTEXT- state>> {
+ - nombre: String
+ - fechaInicio: Date
+ - fechaFin: Date
+ - puntoDeEncuentro: String
+ - costo: Real
+ - cupoMinimo: Integer
+ - cupoMaximo: Integer
+
+ + <<create>>Excursion(nombre:String,fechaInicio:Date,fechaFin:Date,puntoDeEncuentro:String,costo:Real,cupoMinimo:Integer,cupoMaximo:Integer): Excursion
+ + setState(estadoExcursion:State): void
+ + inscribir(unUsuario:Usuario): void
+ + obtenerInformacion(): String
+ + cupoMinimo(): boolean
+ + cupoCompleto(): boolean
+ + agregarUsuarioAInscriptos(unUsuario:Usuario): void
+ + agregarUsuarioAlistaEspera(unUsuario:Usuario):void
+ + cantidadFaltanteParaCupoMinimo(): Integer
+ + cantidadFaltanteParaCupoMaximo(): Integer
+ + infoExcursion(): String
+ + infoEmailsUsuarios(): String
+}
+
+abstract State<<STATE - state>><<abstract>>{
+
+  + <<templateMethod>> informacion(excursion:Excursion): Sring
+  + <<abstract>> inscribir(unUsuario:Usuario,excursion:Excursion): void
+  + <<abstract>> adicional(excursion:Excursion): String
+}
+
+class ExcursionProvisoria<<CONCRETE STATE A - state>>{
+
+ + <<create>>ExcursionProvisoria(): ExcursionProvisoria
+ + inscribir(unUsuario:Usuario,excursion:Excursion): void
+ + adicional(excursion:Excursion): String
+}
+
+
+class ExcursionDefinitiva<<CONCRETE STATE B - state>>{
+
+ + <<create>>ExcursionDefinitiva(): ExcursionDefinitiva
+ + inscribir(unUsuario:Usuario,excursion:Excursion): void
+ + adicional(excursion:Excursion): String
+}
+
+class ExcursionEnEspera<<CONCRETE STATE C - state>>{
+
+ + <<create>>ExcursionEnEspera(): ExcursionEnEspera
+ + inscribir(unUsuario:Usuario,excursion:Excursion): void
+ + adicional(excursion:Excursion): String
+}
+
+class Usuario {
+ - nombre: String
+ - apellido: String
+ - email: String
+ 
+ + <<create>>Usuario(nombre:String,apellido:String,email:String):Usuario
+ + getEmail():String
+}
+
+
+class ExcursionProvisoria extends State
+class ExcursionDefinitiva extends State
+class ExcursionEnEspera extends State
+
+Excursion o-- "1" State
+Excursion --> Usuario: usuariosInscriptos*
+Excursion --> Usuario: usuariosEnEspera*
+
+@enduml
