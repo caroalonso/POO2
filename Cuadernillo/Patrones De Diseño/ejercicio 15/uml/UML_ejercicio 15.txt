@@ -1,0 +1,57 @@
+@startuml
+class Mensajero <<CLIENT - adapter>><<CONTEXT - strategy>> {
+ 
+  + <<create>> Mensajero (cifrado:Cifrado): Mensajero
+  + setCifrado(cifrado:Cifrado): void
+  + enviar(mensaje:String): String
+  + recibir(mensaje:String): String
+}
+
+interface Cifrado <<TARGET- adapter>><<STRATEGY - strategy>>{
+ + <<abstract>>encriptar(menssege:String): String
+ + <<abstract>>desencriptar(menssege:String):String
+}
+
+
+class AdapterRC4<<ADAPTER - adapter>><<CONCRETE STRATEGY A - strategy>>  {
+  + <<create>>AdapterRC4(key:String): AdapterRC4
+  + encriptar(menssege:String):String
+  + desencriptar(menssege:String):String
+}
+
+class AdapterFeistelCipher<<ADAPTER - adapter>><<CONCRETE STRATEGY B - strategy>>  {
+  + <<create>>AdapterFeistelCipher(key:String): AdapterFeistelCipher
+  + encriptar(menssege:String):String
+  + desencriptar(menssege:String):String
+}
+
+class FeistelCipher <<ADAPTEE- adapter>>{
+- key:String
+- round:integer = 4
+
++ <<create>>FeistelCipher(keyStr:String): FeistelCipher
+- feistelBlock(block: byte[]): byte[]
+- feistelBlockDecode(block: byte[]): byte[]
+- intsToBytes(left:integer,right:integer): byte[]
++ encode(message:String):String
++ decode(message:String):String
+}
+
+class RC4 <<ADAPTEE - adapter>>{
+- S: byte[]
+- i:integer
+- j:integer
+
++ <<create>>RC4():RC4
+- keySetup(key:byte[]): void
+- process (data:byte[], key:byte[]): byte[]
++ encriptar(mensaje:String,clave:String): String
++ desencriptar(mensaje:String,clave:String): String
+}
+
+Mensajero -->  "1 " Cifrado 
+class AdapterRC4 implements Cifrado
+class AdapterFeistelCipher implements Cifrado
+AdapterRC4 --> "1 " RC4
+AdapterFeistelCipher --> "1 " FeistelCipher
+@enduml

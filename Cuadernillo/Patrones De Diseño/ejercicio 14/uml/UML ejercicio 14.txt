@@ -1,0 +1,105 @@
+@startuml
+
+class Director <<DIRECTOR>> {
+ 
+ + <<create>> Director(): Director
+ + construir (builder:EquipoBuilder) : Equipo 
+}
+
+abstract EquipoBuilder <<BUILDER>><<abstract>>{
+  - nombre:String
+  - fecha: Date
+
+  + <<create>> EquipoBuilder(catalogo:Catalogo,nombre:String,fecha:Date)
+  + reset(): void
+  + <<abstract>> agregarProcesador(): void
+  + <<abstract>> agregarMemoriaRam(): void
+  + <<abstract>> agregarTarjetaGrafica(): void
+  + <<abstract>> agregarDisco(): void
+  + <<abstract>> agregarGabinete(): void
+  + getResultado(): Equipo
+}
+
+class PresupuestoEquipo {
+ - {static} IVA:Real = 0.21
+ - nombreCliente: String
+ - fecha: Date
+
+ + <<create>> PresupuestoEquipo(nombreCliente:String,fecha:Date,equipoEquipo): PresupuestoEquipo
+ + presupuestoEquipo(): Real
+ + consumoEquipo() : Real
+ + precioFinalEquipo() :Real
+}
+
+class Equipo <<PRODUCT>>{
+
+ + agregarComponente(componente:Componente):void
+ + presupuestoEquipo():Real
+ + consumoEquipo():Real
+}
+
+
+class EquipoEstandar <<CONCRETE BUILDER>>{
+
+  + <<create>> EquipoEstandar(catalogo:Catalogo,nombre:String,fecha:Date): EquipoEstandar 
+  +  agregarProcesador(): void
+  +  agregarMemoriaRam(): void
+  +  agregarTarjetaGrafica(): void
+  +  agregarDisco(): void
+  +  agregarGabinete(): void
+}
+
+class EquipoIntermedio <<CONCRETE BUILDER>>{
+
+  + <<create>> EquipoIntermedio(catalogo:Catalogo,nombre:String,fecha:Date): EquipoIntermedio
+  +  agregarProcesador(): void
+  +  agregarMemoriaRam(): void
+  +  agregarTarjetaGrafica(): void
+  +  agregarDisco(): void
+  +  agregarGabinete(): void
+}
+
+class EquipoGamer <<CONCRETE BUILDER>>{
+ - {static} PORCETAJE_EXTRA : Real = 0.50
+ - {static} VALOR_UNO : Integer = 1
+ 
+ + <<create>>EquipoGamer(catalogo:Catalogo,nombre:String,fecha:Date): EquipoGamer
+  +  agregarProcesador(): void
+  +  agregarMemoriaRam(): void
+  +  agregarTarjetaGrafica(): void
+  +  agregarDisco(): void
+  +  agregarGabinete(): void
+}
+
+class Catalogo {
+
++ <<create>> Catalogo(): Catalogo
++ agregarComponente (componente:Componente):void
++ getComponente (descripcion:String):Componente
+}
+
+
+class Componente {
+ - nombre: String
+ - descripcion : String
+ - precio: Real
+ - consumo: Real
+ 
+ + <<create>> Componente(nombre:String,descripcion:String,precio:Real,consumo:Real):Componente
+ + getNombre():String
+ + getDescripcion() :String
+ + getPrecio() : Real
+ + getConsumo(): Real
+}
+
+
+PresupuestoEquipo --> " 1" Equipo
+Catalogo --> Componente : componentes *
+Equipo --> Componente : componentes *
+class EquipoEstandar  extends EquipoBuilder
+class EquipoIntermedio extends EquipoBuilder
+class EquipoGamer extends EquipoBuilder
+EquipoBuilder --> "  1 " Equipo
+EquipoBuilder --> " 1" Catalogo
+
+@enduml

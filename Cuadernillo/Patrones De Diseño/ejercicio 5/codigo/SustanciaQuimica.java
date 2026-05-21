@@ -1,5 +1,6 @@
 package PatronesEjercicio5Composite;
 
+
 //COMPONENT
 public interface SustanciaQuimica {
     abstract String formula();

@@ -23,6 +23,5 @@ public class TablaPeriodica {
     public SustanciaQuimica calsio(){
         return new Atomo("Calsio", "Ca",40 ,2, true);
     }
-
     //... otros Elementos
 }
