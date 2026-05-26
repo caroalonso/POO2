@@ -28,6 +28,7 @@
 - [Etiquetas 7](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%207)
 - [Documentos y Estadisticas 8](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%208)
 - [Pedidos 9](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%209)
+- [Triángulo Rectángulo 12](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%2012)
 
 ### 🧩 Patrones de Diseño
 - [Friday the 13th en Java 1.a](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Patrones%20De%20Dise%C3%B1o/ejercicio%201/ejercicio%201a)
