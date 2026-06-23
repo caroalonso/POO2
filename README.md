@@ -28,6 +28,8 @@
 - [Etiquetas 7](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%207)
 - [Documentos y Estadisticas 8](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%208)
 - [Pedidos 9](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%209)
+- [Facturación de llamadas 10 X]()
+- [Arboles binarios 11 X ]()
 - [Triángulo Rectángulo 12](https://github.com/caroalonso/POO2/tree/main/Cuadernillo/Refactoring/ejercicio%2012)
 
 ### 🧩 Patrones de Diseño
